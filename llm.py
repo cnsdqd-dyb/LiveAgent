@@ -18,7 +18,7 @@ import requests
 from openai import OpenAI
 import re
 import os
-os.environ["TAVILY_API_KEY"] = "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"
+os.environ["TAVILY_API_KEY"] = "tvly-"
 class OllamaChat:
     def __init__(
         self,
