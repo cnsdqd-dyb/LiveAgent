@@ -41,16 +41,8 @@ class AudioTTS:
             "高冷御姐": "7f92f8afb8ec43bf81429cc1c9199cb1",
             "夹子音": "7af4d620be1c4c6686132f21940d51c5",
             "元气声": "1aacaeb1b840436391b835fd5513f4c4",
-            "低沉电台女生": "5d2a756ccac542bcbac869e2e55b70ed",
-            "烧夹子": "60d377ebaae44829ad4425033b94fdea",
             "温柔声": "faccba1a8ac54016bcfc02761285e67f",
-            "温柔烧": "992fa0a96e454b339376d167137dfea6",
-            "柔气胆小": "840c5581ce904f41bd56555079bd4e78",
-            "软萌": "e488ebeadd83496b97a3cd472dcd04ab",
-            "女低音": "ec4875ed4e154ed09d1b501a2214579a",
             "夹子可莉": "efc1ce3726a64bbc947d53a1465204aa",
-            "幼女音": "05c25a82cfe0426ab63d3d71ba8656cf",
-            "小女孩带噪声": "cd87cc648bea4f64adcbedaf20392309",
             "可爱的女生": "0dce3af322a342db8b7644212f481918",
             "咄咄逼人": "0d70f9c5bd1947039b9cc10260bba689",
             "董宇辉": "c7cbda1c101c4ce8906c046f01eca1a2",
@@ -84,7 +76,7 @@ class AudioTTS:
             )):
                 audio_data.write(chunk)
             data_pair = (audio_data, expression, motion)
-            # 将音频数据放入队列
+
             self.audio_queue.put(data_pair)
         except Exception as e:
             print(f"文本转语音错误: {str(e)}")
@@ -104,8 +96,7 @@ class AudioTTS:
         while self.is_running:
             try:
                 self.load_interupt()
-                
-                # 从队列中获取音频数据，设置超时以便能响应停止信号
+            
                 data_pair = self.audio_queue.get(timeout=0.1)
                 if data_pair is None or self.interrupt:
                     time.sleep(.1)
