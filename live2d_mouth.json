@@ -1,0 +1,18 @@
+{
+    "expression": "exp_01",
+    "model_path": "v3/Mao/Mao.model3.json",
+    "display_size": {
+        "width": 600,
+        "height": 800
+    },
+    "position": {
+        "x": 0.0,
+        "y": 0.0
+    },
+    "scale": 1.0,
+    "motion": 8,
+    "stop": false,
+    "time": 1739681679.0002997,
+    "mouth_word": "",
+    "mouth_rate": 0
+}

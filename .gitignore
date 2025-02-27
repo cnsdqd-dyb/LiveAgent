@@ -1,0 +1,12 @@
+.locks/*
+asr_model/*
+blip_model/*
+clip_model/*
+faces/*
+FastSAM/*
+live2d/*
+live2d-py/*
+memory/*
+models--BAAI--bge-small-zh-v1.5/*
+sam/*
+whls/*
